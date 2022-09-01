@@ -1,7 +1,5 @@
 deprecated/
 work/
-results/visuals/
-results/readables/
 
 .DS_Store
 .next*
