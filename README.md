@@ -17,7 +17,7 @@ To do so, the pipeline automates the 3 major steps of our analysis:
 This pipeline requires a small handful of preinstalled utilities: NextFlow, Docker, git, R, and the R libraries Tidyverse and Biostrings. If these utilities are already installed on your machine, simply clone the pipeline into a directory of your choice, like so:
 
 ```
-git clone https://github.com/nrminor/prolonged-infection-suppfig1.git .
+git clone https://github.com/dholab/prolonged-infection-suppfig1.git .
 ```
 
 And then, in the workflow directory you chose, run:
@@ -33,7 +33,7 @@ If you do not have the aforementioned utilities installed, proceed to the follow
 As above, our first step will be to run `git clone`, which will bring the workflow files into your directory of choice:
 
 ```
-git clone https://github.com/nrminor/prolonged-infection-suppfig1.git .
+git clone https://github.com/dholab/prolonged-infection-suppfig1.git .
 ```
 
 Next, make sure you have the Docker Engine installed. To install Docker, simply visit the Docker installation page at [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
