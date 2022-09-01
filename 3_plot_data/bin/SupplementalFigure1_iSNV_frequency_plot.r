@@ -379,7 +379,7 @@ write.csv(supplemental_table2, "supplemental_table2_june_substitutions.csv",
 # ----------------- #
 
 # consensus by d297 iSNVs:
-pdf(file = "figsupp1_isnv_frequencies.pdf", 
+pdf(file = "suppfig1_isnv_frequencies.pdf", 
     width = 8, height = 5)
 # setting the plot frame and grid
 plot(mutations$DAY, mutations$FREQ,

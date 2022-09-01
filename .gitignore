@@ -6,3 +6,4 @@ work/
 2_viralrecon/results/articv41
 .nextflow.log*
 .Rhistory
+.DS_Store
