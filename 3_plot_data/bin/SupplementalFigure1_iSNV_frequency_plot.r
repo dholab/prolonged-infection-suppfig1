@@ -377,6 +377,8 @@ write.csv(supplemental_table2, "supplemental_table2_june_substitutions.csv",
 
 ### PLOTTING LOOPS ####
 # ----------------- #
+
+# consensus by d297 iSNVs:
 pdf(file = "figsupp1_isnv_frequencies.pdf", 
     width = 8, height = 5)
 # setting the plot frame and grid
@@ -426,7 +428,7 @@ if (!(297 %in% E484A_plotting$DAY)){
 E484A_plotting <- E484A_plotting[order(E484A_plotting$DAY),]
 
 
-# plotting E484A with confidence intervals
+# plotting E484A
 lines(E484A_plotting$DAY, E484A_plotting$FREQ, col="#213CAD", lwd = 2.5)
 points(E484A_plotting$DAY, E484A_plotting$FREQ, pch = 20, col = "#213CAD", cex = 2)
 
@@ -457,3 +459,124 @@ legend(median(fasta_df$day_of_infection), 1.05,
        xjust = 0.25, yjust = 0)
 dev.off()
 
+
+
+# all recurring iSNVS:
+pdf(file = "all_recurring_isnv_frequencies.pdf", 
+    width = 8, height = 5)
+# setting the plot frame and grid
+plot(mutations$DAY, mutations$FREQ,
+     xlim = c(100, 500),
+     xlab = "Days Post-Diagnosis", 
+     ylim = c(0,1), ylab = "iSNV Frequency", 
+     frame.plot = F, cex.axis = 0.8, cex.lab = 0.85, las = 1,
+     pch = 20, col = "darkgray", cex = 0.8, type = 'n')
+grid()
+
+for (i in unique(mutations$REF_POS_ALT)){
+  mut_sub <- mutations[mutations$REF_POS_ALT==i,]
+  
+  if (nrow(mut_sub)>1) {
+    lines(mut_sub$DAY, mut_sub$FREQ, col="gray")
+    # points(mut_sub$DAY, mut_sub$FREQ, pch = 20, col = "darkgray", cex = 0.8)
+    
+    for (j in 1:nrow(mut_sub)){
+      
+      points(mut_sub$DAY[j], mut_sub$FREQ[j], pch = 20, col = "darkgray", cex = 0.8)
+      
+    }
+  } else {
+    next
+  }
+  
+}
+
+# plotting E484A
+lines(E484A_plotting$DAY, E484A_plotting$FREQ, col="#213CAD", lwd = 2.5)
+points(E484A_plotting$DAY, E484A_plotting$FREQ, pch = 20, col = "#213CAD", cex = 2)
+
+# plotting E484T
+lines(E484T$DAY, E484T$FREQ, col="#FEB815", lwd = 2.5)
+points(E484T$DAY, E484T$FREQ, pch = 20, col = "#FEB815", cex = 2)
+
+# abline(h=0.1, lty = 4)
+abline(h=0.03, lty = 3)
+abline(h=0.5, lty = 5)
+
+legend(median(fasta_df$day_of_infection), 1.05, 
+       legend=c("E484A", "E484T", 
+                paste(length(unique(consensus_by_d297$REF_POS_ALT)), 
+                      "iSNVs more frequent in June", sep = " "),
+                "Typical Illumina frequency cutoff",
+                "consensus frequency cutoff"),
+       lwd = c(NA, NA, NA, 
+               1, 1, 1), 
+       lty = c(NA, NA, NA,
+               3, 5),
+       pch = c(20, 20, 20, 
+               NA, NA),
+       col = c("#213CAD", "#FEB815", "gray", 
+               "black", "black"),
+       bty = "n", cex = 0.8, bg="transparent", ncol = 2, xpd = T,
+       xjust = 0.25, yjust = 0)
+dev.off()
+
+
+
+
+
+# all iSNVS:
+pdf(file = "all_isnv_frequencies.pdf", 
+    width = 8, height = 5)
+# setting the plot frame and grid
+plot(mutations$DAY, mutations$FREQ,
+     xlim = c(100, 500),
+     xlab = "Days Post-Diagnosis", 
+     ylim = c(0,1), ylab = "iSNV Frequency", 
+     frame.plot = F, cex.axis = 0.8, cex.lab = 0.85, las = 1,
+     pch = 20, col = "darkgray", cex = 0.8, type = 'n')
+grid()
+
+for (i in unique(mutations$REF_POS_ALT)){
+  mut_sub <- mutations[mutations$REF_POS_ALT==i,]
+  
+  lines(mut_sub$DAY, mut_sub$FREQ, col="gray")
+  # points(mut_sub$DAY, mut_sub$FREQ, pch = 20, col = "darkgray", cex = 0.8)
+  
+  for (j in 1:nrow(mut_sub)){
+    
+    points(mut_sub$DAY[j], mut_sub$FREQ[j], pch = 20, col = "darkgray", cex = 0.8)
+    
+  }
+  
+}
+
+# plotting E484A
+lines(E484A_plotting$DAY, E484A_plotting$FREQ, col="#213CAD", lwd = 2.5)
+points(E484A_plotting$DAY, E484A_plotting$FREQ, pch = 20, col = "#213CAD", cex = 2)
+
+# plotting E484T
+lines(E484T$DAY, E484T$FREQ, col="#FEB815", lwd = 2.5)
+points(E484T$DAY, E484T$FREQ, pch = 20, col = "#FEB815", cex = 2)
+
+# abline(h=0.1, lty = 4)
+abline(h=0.03, lty = 3)
+abline(h=0.5, lty = 5)
+
+legend(median(fasta_df$day_of_infection), 1.05, 
+       legend=c("E484A", "E484T", 
+                paste(length(unique(consensus_by_d297$REF_POS_ALT)), 
+                      "iSNVs more frequent in June", sep = " "),
+                "Typical Illumina frequency cutoff",
+                "consensus frequency cutoff"),
+       lwd = c(NA, NA, NA, 
+               1, 1, 1), 
+       lty = c(NA, NA, NA,
+               3, 5),
+       pch = c(20, 20, 20, 
+               NA, NA),
+       col = c("#213CAD", "#FEB815", "gray", 
+               "black", "black"),
+       bty = "n", cex = 0.8, bg="transparent", ncol = 2, xpd = T,
+       xjust = 0.25, yjust = 0)
+dev.off()
