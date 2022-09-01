@@ -30,13 +30,55 @@ If you do not have the aforementioned utilities installed, proceed to the follow
 
 ## Detailed Instructions
 
-### Step 1: Download Reads from Sequence Read Archive
+As above, our first step will be to run `git clone`, which will bring the workflow files into your directory of choice:
+
+```
+git clone https://github.com/nrminor/prolonged-infection-suppfig1.git .
+```
+
+Next, make sure you have the Docker Engine installed. To install Docker, simply visit the Docker installation page at [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
+
+### Nextflow Installation
+
+This workflow uses the [NextFlow](https://www.nextflow.io/) workflow manager. We recommend you install NextFlow to your system in one of the two following ways:
+
+#### 1) Installation with Conda
+
+1. Install the miniconda python distribution, if you haven't already: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+2. Install the `mamba` package installation tool in the command line, if not already installed:
+   `conda install -y -c conda-forge mamba`
+3. Install Nextflow to your base environment:
+   `mamba install -c bioconda nextflow `
+
+#### 2) Installation with curl
+
+1. Run the following line in a directory where you'd like to install NextFlow, and run the following line of code:
+   `curl -fsSL https://get.nextflow.io | bash`
+2. Add this directory to your $PATH. If on MacOS, a helpful guide can be viewed [here](https://www.architectryan.com/2012/10/02/add-to-the-path-on-mac-os-x-mountain-lion/).
+
+To double check that the installation was successful, type `nextflow -v` into the terminal. If it returns something like `nextflow version 21.04.0.5552`, you are ready to proceed.
+
+### Running the workflow
+
+With the pipeline file bundle cloned, Docker installed, and NextFlow installed, you are ready to reproduce our findings. To do so, simply change into the workflow directory and run the following in the BASH terminal:
+
+```
+bash run_pipeline.sh
+```
+
+This script will run the pipeline, step by step.
+
+### Step-by-step Run
+
+If the above script produces errors, or you would like to oversee the pipeline as each step runs, you may run each step yourself, as follows.
+
+#### Step 1: Download Reads from Sequence Read Archive
 
 ```
 nextflow run 1_download_fastqs/sc2_read_downloader.nf
 ```
 
-### Step 2: Run ViralRecon
+#### Step 2: Run ViralRecon
 
 Run samplesheet maker script:
 
@@ -83,7 +125,7 @@ nextflow run nf-core/viralrecon \
 -profile docker
 ```
 
-### Step 3: Run iSNV PlotteR
+#### Step 3: Run iSNV PlotteR
 
 ```
 nextflow run 3_plot_data/prolonged_infection_suppfig1.nf \
@@ -92,3 +134,5 @@ nextflow run 3_plot_data/prolonged_infection_suppfig1.nf \
 ```
 
 ## Troubleshooting
+
+The pipeline nf-core/viralrecon is resource intensive, and may encounter a number of snags depending on what resources are available on your system and how you have Docker configured. See `2_viralrecon/README.md` for our recommendations on this.
