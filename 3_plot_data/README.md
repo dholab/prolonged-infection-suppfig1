@@ -1,11 +1,3 @@
-## Installation
+## Step 3: Plotting the data
 
-```
-
-git clone --recursive https://github.com/nrminor/prolonged-infection-suppfig1.git .
-
-cd scripts/zequencer_ncov19
-docker build --tag zequencer_ncov19:v2_0_3 .
-
-```
-
+This workflow unzips, renames, and processes the viralrecon VCF files with the R script `SupplementalFigure1_iSNV_frequency_plot.r`. It produces a number of outputs describing the intrahost variants observed over the course of the infection; all CSV-formatted spreadsheets will be placed in `results/readables/`, and all PDF-formatted figures will be in `results/visuals`.
