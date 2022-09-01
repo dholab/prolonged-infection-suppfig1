@@ -1,0 +1,11 @@
+sample,fastq_1,fastq_2
+timepoint02_day124,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint02_day124_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint02_day124_R2.fastq.gz
+timepoint03_day131,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint03_day131_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint03_day131_R2.fastq.gz
+timepoint04_day159,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint04_day159_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint04_day159_R2.fastq.gz
+timepoint05_day198,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint05_day198_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint05_day198_R2.fastq.gz
+timepoint06_day297,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint06_day297_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint06_day297_R2.fastq.gz
+timepoint08_day388,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint08_day388_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint08_day388_R2.fastq.gz
+timepoint09_day415,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint09_day415_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint09_day415_R2.fastq.gz
+timepoint10_day417,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint10_day417_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint10_day417_R2.fastq.gz
+timepoint11_day482,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint11_day482_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint11_day482_R2.fastq.gz
+timepoint12_day488,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint12_day488_R1.fastq.gz,/Volumes/nrm_exp1/dholk_experiments/27615/1_download_fastqs/reads//timepoint12_day488_R2.fastq.gz

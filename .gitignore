@@ -1,0 +1,9 @@
+work/
+.nextflow/
+1_download_fastqs/reads
+2_viralrecon/work/
+2_viralrecon/results/articv3
+2_viralrecon/results/articv41
+results/*
+.nextflow.log*
+.Rhistory

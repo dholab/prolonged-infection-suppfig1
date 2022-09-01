@@ -1,0 +1,12 @@
+sra_id,file_basename,platform,primer_set
+SRR19159439,timepoint02_day124,illumina,resources/ARTICv4.1_primers.bed
+SRR19159435,timepoint03_day131,illumina,resources/ARTICv4.1_primers.bed
+SRR19159433,timepoint04_day159,illumina,resources/ARTICv4.1_primers.bed
+SRR19159431,timepoint05_day198,illumina,resources/ARTICv4.1_primers.bed
+SRR19159449,timepoint06_day297,illumina,resources/ARTICv4.1_primers.bed
+SRR19159448,timepoint07_day333,illumina,resources/ARTICv3_primers.bed
+SRR19159446,timepoint08_day388,illumina,resources/ARTICv4.1_primers.bed
+SRR19159444,timepoint09_day415,illumina,resources/ARTICv4.1_primers.bed
+SRR19159442,timepoint10_day417,illumina,resources/ARTICv4.1_primers.bed
+SRR19159440,timepoint11_day482,illumina,resources/ARTICv4.1_primers.bed
+SRR19159437,timepoint12_day488,illumina,resources/ARTICv4.1_primers.bed
