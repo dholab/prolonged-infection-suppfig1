@@ -54,16 +54,6 @@ echo ------------------------------------
 echo NF-CORE/VIRALRECON COMPLETE. NOW PLOTTING THE RESULTS
 echo ------------------------------------
 
-nextflow run nf-core/viralrecon \
---input 2_viralrecon/illumina_articv3_samplesheet.csv \
---outdir 2_viralrecon/results/articv3/ \
---platform illumina \
---protocol amplicon \
---genome 'MN908947.3' \
---primer_set artic \
---primer_set_version 3 \
---skip_assembly \
---max_cpus "4" \
---max_memory "16 GB" \
--w 2_viralrecon/work/ \
--profile docker
+nextflow run 3_plot_data/prolonged_infection_suppfig1.nf \
+--input_data '2_viralrecon/results/' \
+-w 3_plot_data/work
